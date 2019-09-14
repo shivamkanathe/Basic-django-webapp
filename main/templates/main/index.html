@@ -1,0 +1,247 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" {% static "main/dell.jpg" %}>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  body{
+    margin: 00px;
+    padding: 00px;
+  }
+    .carousel-inner img {
+    width: 100%;
+    height: 400px;
+    background-attachment: sticky;
+    background-position: fixed;
+    opacity: 0.5px;
+  }
+  .carousel-inner{
+    margin-top: -40px;
+  }
+  .container-fluid{
+    margin: 00px;
+    padding: 00px;
+    background-position: fixed;
+    background-attachment: sticky;
+
+  }
+  h1{
+    text-align: center;
+    margin-top: 40px;
+    color: tomato;
+  }
+  .container{
+    margin-top: 20px;
+  }
+  .ok{
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 30px;
+  }
+  .btn{
+    background-color: red;
+    color: white;
+    margin-left: 40%;
+    margin-top: 40px;
+    font-size: 20px;
+  }
+  .slideanim{
+    margin-top: 30px;
+  }
+  
+  .kana{
+    margin-top:60px;
+    text-align: center;
+    color: tomato;
+  }
+  .yes{
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    background-color: yellow;
+    box-shadow: 10px 10px grey;
+    margin-left: 50px;
+  }
+  .yess{
+    width: 300px;
+    height: 100px;
+    padding: 15px;
+    background-color: yellow;
+    box-shadow: 10px 10px grey;
+
+  }
+  .yo{
+    width: 300px;
+    height: 300px;
+    padding: 15px;
+    margin-left: 40px;
+    background-color: tomato;
+    box-shadow: 10px 10px grey;
+  }
+   .container-fluid{
+    padding: 60px 50px;
+    margin-left: 0px;
+    padding: 0px;
+    margin-top: 45px;
+    background-color: #f6f6f6;
+  }
+ .my{
+  margin-top: 20px;
+  font-size: 20px;
+ }
+ .con{
+  font-size: 50px;
+ }
+ .jay{
+  margin-top: 30px;
+  background-color: darkgrey;
+  height: 500px;
+ }
+ h5{
+   font-size: 40px;
+   text-align: center;
+   color: tomato;
+ }
+  
+  .work{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 100px;
+  }
+  </style>
+</head>
+<body>
+  
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" style="color: white" href="#">Home</a>
+      </li>
+      {% if user.is_authenticated %}
+
+      <li class="nav-item">
+        <a class="nav-link" style="color: white" href="account/">{{user.username}}</a>
+      </li>
+     
+
+      <li class="nav-item">
+        <a class="nav-link" style="color: white" href="/logout">Logout</a>
+      </li>
+     
+      {% else %}
+     
+      <li class="nav-item">
+        <a class="nav-link" style="color: white" href="/register">Register</a>
+      </li>    
+      <li class="nav-item">
+        <a class="nav-link" style="color: white "  href="login">Login</a>
+      </li>    
+     {% endif %}
+    </ul>
+  </div>  
+</nav>
+<br>
+
+<div class="container-fluid mt-3">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    
+      <img src="{% static 'main/images/dell.jpg' %}" alt="Los Angeles" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'main/images/dell.jpg' %}" alt="Chicago" width="1100" height="500">
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'main/images/dell.jpg' %}" alt="New York" width="1100" height="500">
+    </div>
+    
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+</div>
+
+<div class="container bg grey">
+  <h1>Welcome To Plazza</h1>
+    <p class="ok">We invites you to experience the best  we provide not only the rooms but the homes to you so please try the best felling ever you have done itbfore it change the offer for any query please contact us for more informations</p>
+    <button class="btn btn-warning" type="button">Book Now</button>
+      
+      <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'main/images/dell.jpg' %}" alt="vertical wall" width="300" height="300">
+        <p><strong>Extra comfort are here</strong></p>
+        <p>Yes, we provide this</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'main/images/dell.jpg' %}" alt="long-distance" width="300" height="300">
+        <p><strong>Well furnished</strong></p>
+        <p>We also provide this</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="{% static 'main/images/dell.jpg' %}" alt="height work" width="300" height="300">
+        <p><strong>Better beauty </strong></p>
+        <p>Yes, we provide this</p>
+      </div>
+    </div>
+    </div>
+  <div id="services" class="container-fluid text-center">
+  <h2>Our Pride</h2>
+  <h4>What we achived</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-6">
+      <div class="yo"><br>We are the one who got the prize for the best service and to satisfy them.
+        we done our best to give them comfort.<br> We got this prize due to support of our team members all thanks to members</div>
+      <p class="my">This is our pride</p>
+    </div>
+    <div class="col-sm-6">
+      <div class="yo"><br>We are the one who got the prize for the best service and to satisfy them.
+        we done our best to give them comfort.<br> We got this prize due to support of our team members all thanks to members </div>
+      <p class="my">This is our teams</p>
+    </div>
+  </div>
+</div>
+
+  <div class="jay">
+    <h5>Contact</h5>
+    <p class="work"> Contact us we will get you within 24 hours<br>
+       Mob.    xxxxxxxxx, xxxxxxxxx<br>
+       Address Prince Nagar Indore<br>
+       Email  any@gmail.com</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% block content %}
+
+
+<form method="POST">
+  {% csrf_token%}
+  
+  {{form.as_p}}
+   <button type="submit" class="btn"> register</button>
+</form>
+if you have already have an account,<a href="/login">login</a>instead.
+{% endblock %}
